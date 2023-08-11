@@ -103,8 +103,9 @@ function getSaleProducts() {
 // (Hint: look up the array method 'includes' on MDN)
 function getBlueProducts() {
 const blueProducts = products.filter(() => {
-  products.includes('blue',1) = blueProducts
-})
+  products.includes('blue',1)
+  return (blueProducts)
+}) 
 }
 
 // Get the total price of all the products using the reduce method.

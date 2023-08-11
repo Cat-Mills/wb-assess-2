@@ -6,7 +6,11 @@
 //   bicycles might come from different manufacturers
 // - Bicycles come in different colors (ex.: red, silver, blue…)
 class Bicycle {
-  // Replace this with your code
+  constructor(wheels = 2,manufacturer,color){
+    this.wheels = wheels;
+    this.manufacturer = manufacturer;
+    this.color = color
+  }
 }
 
 // This User class is intended to be used in a web application where users can
@@ -25,11 +29,16 @@ class User {
   }
 
   processChangePassword(currentPassword, newPassword) {
-    // Replace this with your code
+    if(currentPassword == password){
+      this.password = newPassword
+      return true
+    } else {
+      return false
+    }
   }
 }
 
-// This Book class is complete -- you don't need to change anything here. Instad,
+// This Book class is complete -- you don't need to change anything here. Instead,
 // you'll use it to implement two methods on the Library class below:
 //
 // - createAndAddBook: This method should create a new Book instance with the
@@ -50,11 +59,12 @@ class Library {
   }
 
   createAndAddBook(title, author) {
-    // Replace this with your code
+    const book = new Book(title,author)
+    this.books.push(book)
   }
 
   findBooksByAuthor(author) {
-    // Replace this with your code
+    return this.books.filter(a => a.author === author)
   }
 }
 
@@ -86,7 +96,15 @@ class Rectangle {
 }
 
 class Square extends Rectangle {
-  // Replace this with your code
+  constructor(num){
+    super.getArea(num)
+      if(this.length == this.width){
+        return num
+      } else {
+        return undefined
+      }
+    
+  }
 }
 
 export { Bicycle, Book, Library, Rectangle, Square, User };
