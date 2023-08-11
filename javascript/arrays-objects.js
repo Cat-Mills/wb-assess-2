@@ -4,16 +4,20 @@
 // - an array of strings: 'apple', 'berry', 'cherry'
 // - the boolean value true
 function myArr() {
-  // Replace this with your code
+  return [4,'abc',['apple','berry','cherry'],true]
 }
 
 // The following array, `nestedLetters`, contains many levels of nested arrays.
 // Return the letter 'z' from `nestedLetters` using bracket notation.
 function getZ() {
   const nestedLetters = ['m', 'g', 'e', 'q', 'h', ['n', 'b', ['v', 'z', 'y', 'r']], 'a'];
-
-  // Replace this with your code
+  let nest2 = nestedLetters[5]
+  let nest3 = nest2[2]
+  let value = nest3[1]
+  return value
 }
+
+console.log(getZ())
 
 // Use the spread operator to combine the following arrays into one array and return it.
 function flatAnimals() {
@@ -21,16 +25,16 @@ function flatAnimals() {
   const ocean = ['whale', 'shark', 'dolphin', 'octopus', 'starfish'];
   const savannah = ['lion', 'zebra', 'lion', 'giraffe'];
   const desert = ['rattlesnake', 'coyote'];
-
-  // Replace this with your code
+  const myArr = [forest,ocean,savannah,desert]
+  const newArr = myArr.flat()
+  return newArr
 }
-
 // Now use the spread operator to return a copy of the animals array with 'elephant' at
 // the end.
 function animalsWithElephant() {
   const animals = ['aardvark', 'bear', 'cat'];
-
-  // Replace this with your code
+  const animals1 = [...animals,'elephant']
+  return animals1
 }
 
 // You don't agree with the rating for Splendor,
@@ -45,7 +49,7 @@ function improveGameRating() {
     rating: 1,
   };
 
-  // Replace this with your code
+  delete gameInfo.rating
 
   return gameInfo;
 }
@@ -62,9 +66,11 @@ function evenShapes() {
     septagon: 7,
     octagon: 8,
   };
-
-  // Replace this with your code
-
+  let odd = []
+  for(let i = 0; i < shapes.length; i++) {
+    if (shapes[i] % 2 == 1)
+    odd.delete(shapes[i])
+  }
   return shapes;
 }
 
@@ -100,7 +106,13 @@ function betterCourses() {
     },
   ];
 
-  // Replace this with your code
+  for(let i = 0; i < courses.length; i++){
+    for(let key in courses[i]) {
+      if(key === true){
+        key = false
+      }
+    }
+  }
 
   return courses;
 }
@@ -113,7 +125,13 @@ function findPairs() {
   const lettersToPair = ['e', 'k', 's', 'a', 'e', 's', 'a', 'n', 'k', 'n'];
   const pairsArray = [];
 
-  // Replace this with your code
+  for(let i = 0; i < lettersToPair.length; i++){
+    for(let j = 0; j < lettersToPair[i].length; j++){
+      if( lettersToPair[j] === lettersToPair[i]){
+        pairsArray.push[lettersToPair[j]]
+      }
+    }
+  }
 
   return pairsArray;
 }
@@ -137,18 +155,21 @@ const shippingInfo = {
 // Using the Object.assign method, create a new object that combines the contactInfo and
 // shippingInfo objects and return it.
 function getHelensInfo() {
-  // Replace this with your code
+  let helensInfo = Object.assign(shippingInfo,contactInfo)
+  return helensInfo
 }
 
 // Return Helen's email using destructuring.
 function getHelensEmail() {
-  // Replace this with your code
+  let email = contactInfo.email
+  return email
 }
 
 // Use destructuring to save the zip code and state
 // from shippingInfo to new variables and return [zipCode, state]
 function getZipAndState() {
-  // Replace this with your code
+  const {zipCode, state, zipAndState=`${zipCode}${state}`} = shippingInfo
+  return zipAndState
 }
 
 // Helen has a daughter named Ellen that lives at the same address.
@@ -157,7 +178,12 @@ function getZipAndState() {
 // and the email address to 'ellen@email.com'.
 // Return the new object.
 function getEllensInfo() {
-  // Replace this with your code
+  const {...contactInfo} = contactInfo
+  const {...shippingInfo} = shippingInfo
+  let info = (contactInfo + shippingInfo)
+  contactInfo.name = 'Ellen'
+  shippingInfo.email = 'ellen@email.com'
+  return (info)
 }
 
 // Use the userInfo object below to complete problems 9-11.
@@ -210,19 +236,19 @@ const userInfo = {
 
 // Return the value of alerts in gn@rly_c0der_007's settings using dot notation.
 function shouldAlert() {
-  // Replace this with your code
+  return (userInfo.settings.alerts)
 }
 
 // Return the last item in gn@rly_c0der_007's topics array
 // using dot and/or bracket notation.
 function lastTopic() {
-  // Replace this with your code
+  return userInfo.topics[3]
 }
 
 // Return the userId of the first response to
 // gn@rly_c0der_007's 2nd comment using dot/bracket notation.
 function firstResponseId() {
-  // Replace this with your code
+  return userInfo.comments[1].responses[0].userId
 }
 
 export {
