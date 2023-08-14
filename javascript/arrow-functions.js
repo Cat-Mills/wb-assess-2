@@ -53,7 +53,6 @@ const foods = [
 // and then adding the results together.
 function addCalories() {
   foods.forEach(food => {
-    const {carbs = 0, protein = 0, fat = 0 } = food
     food.calories = carbs * 4 + protein * 4 + fat * 9
   })
   return foods;
@@ -92,8 +91,9 @@ const products = [
 // You've decided to have a sale on everything you have in stock. It's all going to be 25% off.
 // Using the map method, make a copy of your products array with the prices reduced by 25%
 // and return it.
+
 function getSaleProducts() {
-  const onSaleProducts = products.map((price) => price * 0.25)
+  const onSaleProducts = products.map((price) => price * 0.75)
   return (onSaleProducts)
 }
 
@@ -109,12 +109,19 @@ const blueProducts = products.filter(() => {
 }
 
 // Get the total price of all the products using the reduce method.
-function getTotalPrice() {
-  let all = products.reduce((total,curValue) => {
-    return total + curValue.price
-  },initialValue)
-  return(all)
+
+function getTotalPrice(){
+  const total = products.reduce((acc,prod) => {
+    return acc + prod.price
+  }, 0)
+  return total
 }
+// function getTotalPrice() {
+//   let all = products.reduce((total,curValue) => {
+//     return total + curValue.price
+//   },initialValue)
+//   return(all)
+// }
 
 export {
   addCalories,

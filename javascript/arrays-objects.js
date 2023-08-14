@@ -126,9 +126,9 @@ function findPairs() {
   const pairsArray = [];
 
   for(let i = 0; i < lettersToPair.length; i++){
-    for(let j = 0; j < lettersToPair[i].length; j++){
+    for(let j = i + 1; j < lettersToPair.length; j++){
       if( lettersToPair[j] === lettersToPair[i]){
-        pairsArray.push[lettersToPair[j]]
+        pairsArray.push([i,j])
       }
     }
   }
@@ -154,6 +154,10 @@ const shippingInfo = {
 
 // Using the Object.assign method, create a new object that combines the contactInfo and
 // shippingInfo objects and return it.
+
+// function getHelensinfo() {
+//   return Object.assign(contactInfo,shippingInfo)
+// }
 function getHelensInfo() {
   let helensInfo = Object.assign(shippingInfo,contactInfo)
   return helensInfo
@@ -177,14 +181,17 @@ function getZipAndState() {
 // contactInfo and shippingInfo objects. Then, overwrite the name property to 'Ellen'
 // and the email address to 'ellen@email.com'.
 // Return the new object.
-function getEllensInfo() {
-  const {...contactInfo} = contactInfo
-  const {...shippingInfo} = shippingInfo
-  let info = (contactInfo + shippingInfo)
-  contactInfo.name = 'Ellen'
-  shippingInfo.email = 'ellen@email.com'
-  return (info)
+function getEllensInfo(){
+  return {...shippingInfo, ...contactInfo, name: "Ellen", email: 'ellen@email.com'}
 }
+// function getEllensInfo() {
+//   const {...contactInfo} = contactInfo
+//   const {...shippingInfo} = shippingInfo
+//   let info = (contactInfo + shippingInfo)
+//   contactInfo.name = 'Ellen'
+//   shippingInfo.email = 'ellen@email.com'
+//   return (info)
+// }
 
 // Use the userInfo object below to complete problems 9-11.
 const userInfo = {
