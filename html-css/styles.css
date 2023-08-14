@@ -12,3 +12,44 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+header {
+    height: 10%;
+    display: flex;
+    background-color: rgb(37,37,37);
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+}
+
+#title {
+    color: rgb(42,171,226);
+    padding-right: 40%;
+}
+
+.tab {
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#info1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#block1 {
+    display: flex;
+    flex-direction: column;
+}
+
+#block2 {
+    display: flex;
+    flex-direction: column;
+}
