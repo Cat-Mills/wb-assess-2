@@ -12,44 +12,125 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+* {
+    font-family: 'Nunito',sans-serif;
+}
+
 header {
-    height: 10%;
+    height: 8%;
+    width: 100vw;
     display: flex;
     background-color: rgb(37,37,37);
     justify-content: space-around;
     align-items: center;
-    position: sticky;
-}
+    /* position: sticky,-webkit-sticky; */
+    position: fixed;
 
+}
+body {
+    margin: 0;
+}
 #title {
-    color: rgb(42,171,226);
-    padding-right: 40%;
+    color: #2aabe2;
+    padding-right: 35%;
+    padding-left: 10px;
+    font-size: larger;
 }
 
 .tab {
     color: white;
     display: flex;
     justify-content: flex-end;
+    padding-right: 30px;
 }
 
 #body {
+    padding-top: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding-left: 10%;
+    padding-right: 10%;
 }
+
 
 #info1 {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    width: 70%;
+    padding-inline: 5vw;
+    padding-block: 7vw;
+}
+#blocks {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    padding-inline: 5vw;
+    padding-block: 7vw;
 }
 
 #block1 {
     display: flex;
     flex-direction: column;
+    border-radius: 3px;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: center;
+    /* box-shadow: 5px 5px 5px black; */
+    box-shadow: 0px 0px 8px 3px gray;
+    /* padding-block: 7vw; */
+    margin-bottom: 5vh;
 }
-
 #block2 {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    border-radius: 3px;
+    padding: 5px;
+    /* box-shadow: 5px 5px 5px black; */
+    box-shadow: 0px 0px 8px 3px gray;
+    
+}
+h3 {
+    display: flex;
+    margin: 2px;
+    justify-content: center;
+}
+p {
+    text-align: left;
+    font-size: 16px;
+}
+li {
+    padding-bottom: 4px;
+}
+#profile {
+    height: 80px;
+    padding-bottom: 8px;
+}
+#imageGallery {
+    text-align: left;
+    justify-content: left;
+    padding-bottom: 10px;
+}
+
+#imgBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image {
+    height: 100px;
+    padding: 10px;
+}
+footer {
+    display: flex;
+    box-sizing: border-box;
+    width: 100vw;
+    background-color: #2aabe2;
+    padding-left: 10px;
 }
