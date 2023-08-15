@@ -66,10 +66,10 @@ function evenShapes() {
     septagon: 7,
     octagon: 8,
   };
-  let odd = []
-  for(let i = 0; i < shapes.length; i++) {
-    if (shapes[i] % 2 == 1)
-    odd.delete(shapes[i])
+  for(let key in shapes) {
+    if (shapes[key] % 2 == 1){
+    delete shapes[key]
+  }
   }
   return shapes;
 }
@@ -108,12 +108,11 @@ function betterCourses() {
 
   for(let i = 0; i < courses.length; i++){
     for(let key in courses[i]) {
-      if(key === true){
-        key = false
+      if(courses[i][key] === true){
+        courses[i][key] = false
       }
     }
   }
-
   return courses;
 }
 
@@ -172,8 +171,8 @@ function getHelensEmail() {
 // Use destructuring to save the zip code and state
 // from shippingInfo to new variables and return [zipCode, state]
 function getZipAndState() {
-  const {zipCode, state, zipAndState=`${zipCode}${state}`} = shippingInfo
-  return zipAndState
+  const {zipCode, state} = shippingInfo
+  return [zipCode,state]
 }
 
 // Helen has a daughter named Ellen that lives at the same address.
