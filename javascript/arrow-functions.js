@@ -1,5 +1,5 @@
 // Write an arrow function that returns 2.
-const giveMeTwo = () =>{
+const giveMeTwo = () => {
   return 2
 }
 
@@ -21,7 +21,7 @@ const compareNums = (num1,num2) =>{
   }
 }
 
-const foods = [
+const foods = [ //array of objects
   {
     name: 'bread',
     carbs: 36,
@@ -52,8 +52,8 @@ const foods = [
 // Calories can be calculated by multiplying carbs by 4, protein by 4, fat by 9,
 // and then adding the results together.
 function addCalories() {
-  foods.forEach(food => {
-    food.calories = carbs * 4 + protein * 4 + fat * 9
+  foods.forEach(food => { //food is each object
+    food.calories = food.carbs * 4 + food.protein * 4 + food.fat * 9
   })
   return foods;
 }
@@ -93,7 +93,11 @@ const products = [
 // and return it.
 
 function getSaleProducts() {
-  const onSaleProducts = products.map((price) => price * 0.75)
+  const onSaleProducts = products.map((obj) => {
+    const updatedObj = {...obj}
+    updatedObj.price *= 0.75;
+    return updatedObj
+  }) 
   return (onSaleProducts)
 }
 
@@ -102,10 +106,10 @@ function getSaleProducts() {
 // to a new variable called 'blueProducts'.
 // (Hint: look up the array method 'includes' on MDN)
 function getBlueProducts() {
-const blueProducts = products.filter(() => {
-  products.includes('blue',1)
-  return (blueProducts)
+const blueProducts = products.filter((obj) => { //.filter returns a condition
+  return obj.color.includes('blue') //this is the condition
 }) 
+return blueProducts
 }
 
 // Get the total price of all the products using the reduce method.

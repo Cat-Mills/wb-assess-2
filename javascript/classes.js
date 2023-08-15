@@ -6,13 +6,14 @@
 //   bicycles might come from different manufacturers
 // - Bicycles come in different colors (ex.: red, silver, blue…)
 class Bicycle {
-  constructor(wheels = 2,manufacturer,color){
-    this.wheels = wheels;
+  constructor(color, manufacturer) {
+    this.numWheels = 2;
     this.manufacturer = manufacturer;
     this.color = color
   }
 }
 
+// }
 // This User class is intended to be used in a web application where users can
 // log in with a username and password.
 //
@@ -27,9 +28,8 @@ class User {
     this.username = username;
     this.password = password;
   }
-
   processChangePassword(currentPassword, newPassword) {
-    if(currentPassword == password){
+    if (currentPassword === this.password) {
       this.password = newPassword
       return true
     } else {
@@ -58,9 +58,9 @@ class Library {
     this.books = [];
   }
 
-  createAndAddBook(title, author) {
-    const book = new Book(title,author)
-    this.books.push(book)
+  createAndAddBook(title, author) { //Takes the Book constructors
+    const book = new Book(title, author) //creates var called book that is built in the Book class
+    this.books.push(book) // pushes book into the currently empty arr called books
   }
 
   findBooksByAuthor(author) {
@@ -96,14 +96,15 @@ class Rectangle {
 }
 
 class Square extends Rectangle {
-  constructor(num){
-    super.getArea(num)
-      if(this.length == this.width){
-        return num
-      } else {
-        return undefined
-      }
-    
+  constructor(num) {
+    super(num,num)
+  }
+  getArea() {
+    if (this.length == this.width) {
+      return this.length * this.width
+    } else {
+      return undefined
+    }
   }
 }
 
