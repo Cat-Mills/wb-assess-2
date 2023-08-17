@@ -97,13 +97,15 @@ class Rectangle {
 
 class Square extends Rectangle {
   constructor(num) {
+    //Call the parent class constructor with the same side length for both
     super(num,num)
   }
   getArea() {
+    //Check if the square is valid (length and width are equal)
     if (this.length == this.width) {
-      return this.length * this.width
+      return this.length * this.width //return the area of the square
     } else {
-      return undefined
+      return undefined //return undefined if the square is invalid
     }
   }
 }
